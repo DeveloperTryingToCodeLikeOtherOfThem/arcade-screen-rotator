@@ -1,0 +1,26 @@
+{
+    "name": "arcade-screen-rotator",
+    "description": "",
+    "dependencies": {
+        "device": "*",
+        "arcade-screen-capture": "github:developertryingtocodelikeotherofthem/arcade-screen--capture#master"
+    },
+    "files": [
+        "main.ts",
+        "README.md",
+        "assets.json",
+        "tansform.ts"
+    ],
+    "testFiles": [
+        "test.ts"
+    ],
+    "targetVersions": {
+        "target": "2.0.61",
+        "targetId": "arcade"
+    },
+    "supportedTargets": [
+        "arcade"
+    ],
+    "preferredEditor": "tsprj",
+    "languageRestriction": "javascript-only"
+}
