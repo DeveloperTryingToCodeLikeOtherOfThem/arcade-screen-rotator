@@ -129,7 +129,7 @@ namespace screenRotator {
         if (_enabled) {
             if (!_spritesWithRotations[sprite.id]) {
                 _spritesWithRotations[sprite.id] = new SpriteWithRotation(sprite, 0);
-                shiftScreen(sprite.image, screen.width * screen.height)
+                shiftScreen(sprite.image, sprite)
             }   // if ( ! _spritesWithRotations[sprite.id] )
 
             _spritesWithRotations[sprite.id].rotation = angle;
@@ -247,11 +247,10 @@ namespace screenRotator {
     }
 
     let rowBuff: Buffer;
-    function shiftScreen(target: Image, numPixels: number) {
-        if (!rowBuff) rowBuff = control.createBuffer(screen.height);
-        for (let x = 0; x < target.width - numPixels; x++) {
-            target.getRows(x + numPixels, rowBuff);
-            target.setRows(x, rowBuff);
-        }
+    function shiftScreen(target: Image, sprite: Sprite) {
+       game.onUpdate(() => {
+
+           screenCapture.createCaptureScreenImageSprite().image.width = sprite.x + sprite.y
+       })
     }
 }   // namespace transformScreen
