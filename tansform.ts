@@ -133,7 +133,7 @@ namespace screenRotator {
             }   // if ( ! _spritesWithRotations[sprite.id] )
 
             _spritesWithRotations[sprite.id].rotation = angle;
-            sprite.setImage(rotate(_spritesWithRotations[sprite.id], angle * control.eventContext().deltaTime));
+            sprite.setImage(rotate(_spritesWithRotations[sprite.id], angle));
         }
     }   // rotateSprite()
 
