@@ -129,6 +129,7 @@ namespace screenRotator {
         if (_enabled) {
             if (!_spritesWithRotations[sprite.id]) {
                 _spritesWithRotations[sprite.id] = new SpriteWithRotation(sprite, 0);
+                shiftScreen(sprite.image, screen.width * screen.height)
             }   // if ( ! _spritesWithRotations[sprite.id] )
 
             _spritesWithRotations[sprite.id].rotation = angle;
@@ -243,5 +244,14 @@ namespace screenRotator {
      */
     export function rotateScreenEnabled(enabled: boolean) {
         _enabled = enabled
+    }
+
+    let rowBuff: Buffer;
+    function shiftScreen(target: Image, numPixels: number) {
+        if (!rowBuff) rowBuff = control.createBuffer(screen.height);
+        for (let x = 0; x < target.width - numPixels; x++) {
+            target.getRows(x + numPixels, rowBuff);
+            target.setRows(x, rowBuff);
+        }
     }
 }   // namespace transformScreen
