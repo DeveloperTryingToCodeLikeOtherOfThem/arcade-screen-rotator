@@ -129,7 +129,7 @@ namespace screenRotator {
         if (_enabled) {
             if (!_spritesWithRotations[sprite.id]) {
                 _spritesWithRotations[sprite.id] = new SpriteWithRotation(sprite, 0);
-                shiftScreen(sprite.image, sprite)
+                // shiftScreen(sprite.image, sprite) unsupported
             }   // if ( ! _spritesWithRotations[sprite.id] )
 
             _spritesWithRotations[sprite.id].rotation = angle;
@@ -246,11 +246,4 @@ namespace screenRotator {
         _enabled = enabled
     }
 
-    let rowBuff: Buffer;
-    function shiftScreen(target: Image, sprite: Sprite) {
-       game.onUpdate(() => {
-
-           screenCapture.createCaptureScreenImageSprite().image.width = sprite.x + sprite.y
-       })
-    }
 }   // namespace transformScreen
