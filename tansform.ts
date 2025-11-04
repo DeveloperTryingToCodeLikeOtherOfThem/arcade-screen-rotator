@@ -252,7 +252,7 @@ namespace screenRotator {
         // game.onUpdate(() => {
         const sprites2 = game.currentScene().allSprites;
         controller.players().forEach(player => {
-            sprites2.forEach(s => player.moveSprite(s as Sprite));
+            sprites2.forEach(s => player.moveSprite(s as Sprite, 0, 0));
         });
         } else if(!enabled) "sprites can move freely now"
     }
