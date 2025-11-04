@@ -3,7 +3,7 @@
     "description": "",
     "dependencies": {
         "device": "*",
-        "arcade-screen-capture": "github:developertryingtocodelikeotherofthem/arcade-screen--capture#master"
+        "arcade-screen-capture": "github:developertryingtocodelikeotherofthem/arcade-screen-capture#master"
     },
     "files": [
         "main.ts",

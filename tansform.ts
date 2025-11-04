@@ -244,6 +244,17 @@ namespace screenRotator {
      */
     export function rotateScreenEnabled(enabled: boolean) {
         _enabled = enabled
+
+        if (enabled) {
+        let allSprites = game.currentScene().allSprites
+
+        let playersList = controller.players()
+        // game.onUpdate(() => {
+        const sprites2 = game.currentScene().allSprites;
+        controller.players().forEach(player => {
+            sprites2.forEach(s => player.moveSprite(s as Sprite));
+        });
+        } else if(!enabled) "sprites can move freely now"
     }
 
 }   // namespace transformScreen
