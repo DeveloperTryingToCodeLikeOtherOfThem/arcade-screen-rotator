@@ -240,7 +240,7 @@ namespace screenRotator {
     //% blockId=rotate_screen_enabled block="rotate screen enabled %enabled=toggleOnOff"
     //% enabled.defl=true weight=30
     /** 
-     * Controls turn on or off the screen rotation
+     *  Enables the on and off feature for the screen rotation
      */
     export function rotateScreenEnabled(enabled: boolean) {
         _enabled = enabled
